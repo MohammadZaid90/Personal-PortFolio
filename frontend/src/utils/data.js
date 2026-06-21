@@ -9,7 +9,7 @@ import jsImg from '@/assets/nodejs.png';
 import htmlImg from '@/assets/html.png';
 import cssImg from '@/assets/css.png';
 import tailwindImg from '@/assets/tailwindcss.png';
-import nodeImg from '@/assets/JavaScript.png';
+import nodeImg from '@/assets/javascript.png';
 import expressImg from '@/assets/expressjs.png';
 import mongoImg from '@/assets/mongodb.png';
 import sqlImg from '@/assets/sql.png';
