@@ -1,0 +1,12 @@
+{
+  "name": "Mohammad Zaid Portfolio",
+  "short_name": "MZ Portfolio",
+  "description": "Software Engineer, AI/ML Developer & Full Stack Web Developer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050508",
+  "theme_color": "#6c63ff",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
