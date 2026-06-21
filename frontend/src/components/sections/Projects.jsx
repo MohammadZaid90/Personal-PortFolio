@@ -4,17 +4,17 @@ import { Github, ExternalLink, Loader2, RefreshCw } from 'lucide-react';
 import { projectsAPI } from '@/utils/api';
 import Reveal from '@/components/ui/Reveal';
 
-import medMentorImg from '@/assets/Projects/MedMentor.png';
-import steganographyImg from '@/assets/Projects/Stegnography.jpeg';
-import handGestureImg from '@/assets/Projects/HandGesture.webp';
-import medicineImg from '@/assets/Projects/MedicineReccomendation.png';
-import smsSpamImg from '@/assets/Projects/SMSSPAM.jpeg';
-import foodOrderingImg from '@/assets/Projects/FoodOrdering.png';
-import inventoryImg from '@/assets/Projects/productsInventory.png';
-import databaseImg from '@/assets/Projects/CLOBased.jpeg';
-import dsaImg from '@/assets/Projects/infix-postfix.jpg';
-import dosShellImg from '@/assets/Projects/DOSSHELL.jpeg';
-import miniExcelImg from '@/assets/Projects/miniexcel.jpeg';
+import medMentorImg from '@/assets/projects/MedMentor.png';
+import steganographyImg from '@/assets/projects/Stegnography.jpeg';
+import handGestureImg from '@/assets/projects/HandGesture.webp';
+import medicineImg from '@/assets/projects/MedicineReccomendation.png';
+import smsSpamImg from '@/assets/projects/SMSSPAM.jpeg';
+import foodOrderingImg from '@/assets/projects/FoodOrdering.png';
+import inventoryImg from '@/assets/projects/productsInventory.png';
+import databaseImg from '@/assets/projects/CLOBased.jpeg';
+import dsaImg from '@/assets/projects/infix-postfix.jpg';
+import dosShellImg from '@/assets/projects/DOSSHELL.jpeg';
+import miniExcelImg from '@/assets/projects/miniexcel.jpeg';
 
 const FALLBACK_PROJECTS = [
   { _id: '1', title: 'MedMentor AI (FYP)', description: 'RAG-powered AI medical assistant for endocrinology. Virtual patient simulation and clinical Q&A. Final Year Project at UET Lahore.', image: medMentorImg, tags: ['Python','RAG','LangChain','React','FastAPI'], githubUrl: 'https://github.com/MohammadZaid90/medmentor-frontend', category: 'ai', featured: true },
