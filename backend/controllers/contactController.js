@@ -1,12 +1,12 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 import { validationResult } from 'express-validator';
 import Contact from '../models/Contact.js';
 
-const createTransporter = () =>
-  nodemailer.createTransport({
-    service: 'gmail',
-    auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS },
-  });
+let resend;
+const getResend = () => {
+  if (!resend) resend = new Resend(process.env.RESEND_API_KEY);
+  return resend;
+};
 
 // POST /api/contact
 export const sendMessage = async (req, res) => {
@@ -27,11 +27,13 @@ export const sendMessage = async (req, res) => {
     });
 
     // Send emails without blocking response
-    if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
-      const transporter = createTransporter();
-      const ownerMail = {
-        from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
+    if (process.env.RESEND_API_KEY) {
+      const fromAddress = process.env.RESEND_FROM || 'Portfolio Contact <onboarding@resend.dev>';
+
+      const ownerMailPromise = getResend().emails.send({
+        from: fromAddress,
         to: process.env.EMAIL_TO || process.env.EMAIL_USER,
+        replyTo: email,
         subject: `New Message: ${subject || 'Portfolio Inquiry'} — from ${name}`,
         html: `
           <div style="font-family:sans-serif;max-width:600px;margin:0 auto;background:#0a0a10;color:#f0f0f5;padding:2rem;border-radius:12px">
@@ -46,10 +48,10 @@ export const sendMessage = async (req, res) => {
             </div>
             <p style="margin-top:1.5rem;color:#5a5a70;font-size:0.8rem">Received: ${new Date().toLocaleString()}</p>
           </div>`,
-      };
+      });
 
-      const replyMail = {
-        from: `"Mohammad Zaid" <${process.env.EMAIL_USER}>`,
+      const replyMailPromise = getResend().emails.send({
+        from: fromAddress,
         to: email,
         subject: `Thanks for reaching out, ${name}!`,
         html: `
@@ -65,10 +67,10 @@ export const sendMessage = async (req, res) => {
               Software Engineer &bull; UET Lahore
             </p>
           </div>`,
-      };
+      });
 
-      Promise.all([transporter.sendMail(ownerMail), transporter.sendMail(replyMail)]).catch(
-        (err) => console.warn('Email error (message saved):', err.message)
+      Promise.all([ownerMailPromise, replyMailPromise]).catch((err) =>
+        console.warn('Email error (message saved):', err.message)
       );
     }
 
