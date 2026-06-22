@@ -12,14 +12,14 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden px-6 pt-24 pb-16"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 pt-24 pb-16"
     >
       {/* Orbs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
           className="absolute rounded-full animate-drift"
           style={{
-            width: '500px', height: '500px',
+            width: '400px', height: '400px',
             background: 'var(--orb1)', filter: 'blur(80px)',
             top: '-100px', left: '-100px',
           }}
@@ -27,7 +27,7 @@ export default function Hero() {
         <div
           className="absolute rounded-full animate-drift"
           style={{
-            width: '400px', height: '400px',
+            width: '350px', height: '350px',
             background: 'var(--orb2)', filter: 'blur(80px)',
             bottom: '-50px', right: '-50px', animationDelay: '-4s',
           }}
@@ -35,7 +35,7 @@ export default function Hero() {
         <div
           className="absolute rounded-full animate-drift"
           style={{
-            width: '300px', height: '300px',
+            width: '250px', height: '250px',
             background: 'var(--orb3)', filter: 'blur(80px)',
             top: '40%', left: '40%', transform: 'translate(-50%,-50%)',
             animationDelay: '-8s',
@@ -51,13 +51,13 @@ export default function Hero() {
         />
       </div>
 
-      <div className="max-w-3xl mx-auto text-center relative z-10">
+      <div className="w-full max-w-3xl mx-auto text-center relative z-10">
         {/* Available badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-8"
+          className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border mb-6 sm:mb-8"
           style={{
             background: 'var(--badge-bg)',
             borderColor: 'var(--badge-border)',
@@ -65,7 +65,7 @@ export default function Hero() {
           }}
         >
           <span
-            className="w-2 h-2 rounded-full animate-pulse-slow"
+            className="w-2 h-2 rounded-full flex-shrink-0 animate-pulse-slow"
             style={{ background: 'var(--green)' }}
           />
           <span className="text-xs font-medium">Available for Internships &amp; Opportunities</span>
@@ -76,8 +76,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="font-head font-extrabold leading-[1.05] mb-4"
-          style={{ fontSize: 'clamp(3rem, 8vw, 5.5rem)' }}
+          className="font-head font-extrabold leading-[1.05] mb-4 w-full"
+          style={{ fontSize: 'clamp(2rem, 10vw, 5.5rem)' }}
         >
           <span className="gradient-text">Mohammad Zaid</span>
         </motion.h1>
@@ -87,8 +87,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.28 }}
-          className="font-light mb-3"
-          style={{ color: 'var(--text-secondary)', fontSize: 'clamp(1rem, 2.5vw, 1.3rem)' }}
+          className="font-light mb-3 px-2"
+          style={{ color: 'var(--text-secondary)', fontSize: 'clamp(0.85rem, 3.5vw, 1.3rem)' }}
         >
           Software Engineer · CS Student at UET Lahore
         </motion.p>
@@ -98,8 +98,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="font-head font-semibold mb-8"
-          style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', color: '#a78bfa' }}
+          className="font-head font-semibold mb-6 sm:mb-8"
+          style={{ fontSize: 'clamp(0.9rem, 3.5vw, 1.25rem)', color: '#a78bfa' }}
         >
           <TypeAnimation
             sequence={[
@@ -120,8 +120,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="max-w-xl mx-auto leading-relaxed mb-10"
-          style={{ color: 'var(--text-muted)', fontSize: '1rem' }}
+          className="max-w-xl mx-auto leading-relaxed mb-8 sm:mb-10 px-2"
+          style={{ color: 'var(--text-muted)', fontSize: 'clamp(0.82rem, 3vw, 1rem)' }}
         >
           Aspiring engineer with a passion for AI/ML, Computer Vision, and Full-Stack Development.
           Building intelligent, real-world solutions from Lahore, Pakistan — one commit at a time.
@@ -132,23 +132,25 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex flex-wrap gap-3 justify-center mb-14"
+          className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center items-center mb-10 sm:mb-14 px-2"
         >
           <button
-            className="btn-primary"
+            className="btn-primary w-full sm:w-auto"
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
           >
             View My Work <ArrowRight size={15} />
           </button>
-          <a href={`mailto:${SOCIAL.email}`} className="btn-outline">
+          <a href={`mailto:${SOCIAL.email}`} className="btn-outline w-full sm:w-auto justify-center">
             <Mail size={15} /> Get In Touch
           </a>
-          <a href={SOCIAL.github} target="_blank" rel="noopener noreferrer" className="btn-ghost">
-            <Github size={15} /> GitHub
-          </a>
-          <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer" className="btn-ghost">
-            <Linkedin size={15} /> LinkedIn
-          </a>
+          <div className="flex gap-3 w-full sm:w-auto justify-center">
+            <a href={SOCIAL.github} target="_blank" rel="noopener noreferrer" className="btn-ghost flex-1 sm:flex-none justify-center">
+              <Github size={15} /> GitHub
+            </a>
+            <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer" className="btn-ghost flex-1 sm:flex-none justify-center">
+              <Linkedin size={15} /> LinkedIn
+            </a>
+          </div>
         </motion.div>
 
         {/* Tech pills */}
@@ -156,6 +158,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.75 }}
+          className="px-2"
         >
           <p
             className="text-xs tracking-widest uppercase mb-3"
