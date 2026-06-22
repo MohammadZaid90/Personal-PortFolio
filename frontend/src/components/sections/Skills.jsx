@@ -78,7 +78,7 @@ export default function Skills() {
       <div className="max-w-5xl mx-auto">
         <Reveal className="text-center mb-12">
           <span className="section-tag">Technical Arsenal</span>
-          <h2 className="font-head font-extrabold text-5xl mb-4">Skills &amp; Technologies</h2>
+          <h2 className="font-head font-extrabold mb-4" style={{fontSize:"clamp(1.6rem,7vw,3rem)"}}>Skills &amp; Technologies</h2>
           <p className="max-w-lg mx-auto" style={{ color: 'var(--text-secondary)' }}>
             A curated set of tools I use to build intelligent, elegant, and scalable software.
           </p>

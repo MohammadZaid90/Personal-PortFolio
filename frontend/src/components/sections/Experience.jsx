@@ -72,7 +72,7 @@ export default function Experience() {
       <div className="max-w-4xl mx-auto">
         <Reveal className="text-center mb-12">
           <span className="section-tag">Background</span>
-          <h2 className="font-head font-extrabold text-5xl mb-4">Experience &amp; Education</h2>
+          <h2 className="font-head font-extrabold mb-4" style={{fontSize:"clamp(1.6rem,7vw,3rem)"}}>Experience &amp; Education</h2>
           <p className="max-w-lg mx-auto" style={{ color: 'var(--text-secondary)' }}>
             Professional journey, academic milestones, and certifications.
           </p>

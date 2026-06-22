@@ -26,7 +26,7 @@ export default function GitHub() {
       <div className="max-w-5xl mx-auto">
         <Reveal className="text-center mb-12">
           <span className="section-tag">Open Source</span>
-          <h2 className="font-head font-extrabold text-5xl mb-4">GitHub Activity</h2>
+          <h2 className="font-head font-extrabold mb-4" style={{fontSize:"clamp(1.6rem,7vw,3rem)"}}>GitHub Activity</h2>
           <p className="max-w-lg mx-auto" style={{ color: 'var(--text-secondary)' }}>
             Explore my repositories and open source contributions.
           </p>

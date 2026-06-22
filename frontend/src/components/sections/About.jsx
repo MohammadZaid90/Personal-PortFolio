@@ -61,7 +61,7 @@ export default function About() {
             <div>
               <span className="section-tag">About Me</span>
 
-              <h2 className="font-head font-extrabold text-4xl leading-tight mb-6">
+              <h2 className="font-head font-extrabold leading-tight mb-6" style={{fontSize:"clamp(1.5rem,6.5vw,2.5rem)"}}>
                 Turning Coffee &amp; Code
                 <br />
                 Into Real Solutions

@@ -189,7 +189,7 @@ export default function Projects() {
       <div className="max-w-5xl mx-auto">
         <Reveal className="text-center mb-12">
           <span className="section-tag">Portfolio</span>
-          <h2 className="font-head font-extrabold text-5xl mb-4">Projects Showcase</h2>
+          <h2 className="font-head font-extrabold mb-4" style={{fontSize:"clamp(1.6rem,7vw,3rem)"}}>Projects Showcase</h2>
           <p className="max-w-lg mx-auto" style={{ color: 'var(--text-secondary)' }}>
             11 projects spanning AI, web development, systems programming, and computer vision.
           </p>

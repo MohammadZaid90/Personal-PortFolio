@@ -44,7 +44,7 @@ export default function Contact() {
       <div className="max-w-5xl mx-auto">
         <Reveal className="text-center mb-16">
           <span className="section-tag">Get In Touch</span>
-          <h2 className="font-head font-extrabold text-5xl mb-4">
+          <h2 className="font-head font-extrabold mb-4" style={{fontSize:"clamp(1.6rem,7vw,3rem)"}}>
             Have an Opportunity?
             <br />
             Let&apos;s Talk.
